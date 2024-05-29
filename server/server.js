@@ -1,18 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const { Pool } = require('pg');
+const { pool } = require('../server/db');
 
 const app = express();
 const port = process.env.PORT || 5000;
 
-const pool = new Pool({
-  user: 'yourusername',
-  host: 'localhost',
-  database: 'yourdatabase',
-  password: 'yourpassword',
-  port: 5432,
-});
+// const pool = new Pool({
+//   user: 'yourusername',
+//   host: 'localhost',
+//   database: 'yourdatabase',
+//   password: 'yourpassword',
+//   port: 5432,
+// });
 
 app.use(cors());
 app.use(bodyParser.json());
